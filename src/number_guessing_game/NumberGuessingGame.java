@@ -1,4 +1,5 @@
 package number_guessing_game;
+import java.util.Random;
 import java.util.Scanner;
 public class NumberGuessingGame {
 	public static void main(String[] args) {
@@ -9,21 +10,43 @@ public class NumberGuessingGame {
 		Scanner scan = new Scanner(System.in);
 		String start = scan.next();
 		char begin = start.charAt(0);
-		one(8);
-		two(89);
-		two(56);
-		three(359);
-		three(809);
-		three(618);
-		four(5115);
-		four(3963);
-		four(1984);
-		four(2201);
-		five(62526);
-		five(76800);
-		five(45105);
-		five(15723);
-		five(50586);
+		
+		Random rand = new Random();
+		int x1 = rand.nextInt(9) + 1;
+		one(x1);
+		
+		int index = 0; 
+		while (index < 2 ) 
+			{
+			int x2 = rand.nextInt(90) + 10;
+			two(x2);
+			index++;
+			}
+		
+		index = 0;
+		while(index < 3)
+		{
+			int x3 = rand.nextInt(900) + 100;
+			three(x3);
+			index++;
+		}
+		
+		index = 0;
+		while(index < 4)
+		{
+			int x4 = rand.nextInt(9000) + 1000;
+			four(x4);
+			index++;
+		}
+		
+		index = 0;
+		while(index < 5)
+		{
+			int x5 = rand.nextInt(99999) + 10000;
+			five(x5);
+			index++;
+		}
+		
 		
 		System.out.println("Congratulations!!!!!   You beat the game");
 		System.out.println("Thanks for playing");
